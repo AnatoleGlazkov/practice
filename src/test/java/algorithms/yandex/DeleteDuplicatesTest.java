@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Stack;
 import java.util.stream.Stream;
 
-import static utils.ArrayUtils.checkInt;
+import static utils.ArrayUtils.check;
 
 /** The type DeleteDuplicates */
 public class DeleteDuplicatesTest {
@@ -44,7 +44,7 @@ public class DeleteDuplicatesTest {
             bank.push(item);
         }
 
-        Assertions.assertTrue(checkInt(expected, bank.stream().mapToInt(Integer::intValue).toArray()));
+        Assertions.assertTrue(check(expected, bank.stream().mapToInt(Integer::intValue).toArray()));
     }
 
 }

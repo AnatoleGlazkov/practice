@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 /** The type ArrayUtils */
 public final class ArrayUtils {
 
-    public static boolean checkInt(
+    public static boolean check(
         int[] expected,
         int[] result
     ) {

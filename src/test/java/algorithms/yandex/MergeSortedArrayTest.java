@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static utils.ArrayUtils.checkInt;
+import static utils.ArrayUtils.check;
 
 /**
  * The type MergeSortedArray
@@ -83,6 +83,6 @@ public class MergeSortedArrayTest {
             }
         }
 
-        Assertions.assertTrue(checkInt(expected, nums1));
+        Assertions.assertTrue(check(expected, nums1));
     }
 }

@@ -13,7 +13,7 @@ import java.util.PriorityQueue;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static utils.ArrayUtils.checkInt;
+import static utils.ArrayUtils.check;
 
 /**
  * The type IntersectionOfTwoArraysIiTest
@@ -60,7 +60,7 @@ public class IntersectionOfTwoArraysIiTest {
         }
 //        return result;
 
-        assertTrue(checkInt(expected, result));
+        assertTrue(check(expected, result));
     }
 
     private void execute(
