@@ -29,7 +29,7 @@ public class ReverseWordsInAStringTest {
     @MethodSource("source")
     public void reverseWords(
         String s,
-        String excepted
+        String expected
     ) {
 
         String[] split = s.split(" ");
@@ -48,6 +48,6 @@ public class ReverseWordsInAStringTest {
                 builder.append(" ");
             }
         }
-        Assertions.assertEquals(excepted, builder.toString());
+        Assertions.assertEquals(expected, builder.toString());
     }
 }
