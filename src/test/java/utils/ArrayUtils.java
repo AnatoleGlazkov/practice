@@ -73,9 +73,22 @@ public final class ArrayUtils {
         return true;
     }
 
-    public static boolean checkChar(
+    public static boolean check(
         char[] expected,
         char[] result
+    ) {
+        if (expected.length != result.length) return false;
+
+        for (int i = 0; i < expected.length; i++) {
+            if (expected[i] != result[i]) return false;
+        }
+
+        return true;
+    }
+
+    public static boolean check(
+        boolean[] expected,
+        boolean[] result
     ) {
         if (expected.length != result.length) return false;
 

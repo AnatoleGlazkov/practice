@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.Stack;
 import java.util.stream.Stream;
 
-import static utils.ArrayUtils.checkChar;
+import static utils.ArrayUtils.check;
 
 /**
  * The type StringCompressionTest
@@ -82,6 +82,6 @@ public class StringCompressionTest {
         if (result.length() >= 0) System.arraycopy(charArray, 0, chars, 0, result.length());
 
         Assertions.assertEquals(expected, result.length());
-        Assertions.assertTrue(checkChar(expectedChar, result.toString().toCharArray()));
+        Assertions.assertTrue(check(expectedChar, result.toString().toCharArray()));
     }
 }
