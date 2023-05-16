@@ -17,7 +17,6 @@ import java.util.stream.Stream;
  */
 public class KidsWithTheGreatestNumberOfCandiesTest {
 
-
     private static Stream<Arguments> source() {
         return Stream.of(
             Arguments.of(new int[]{2, 3, 5, 1, 3}, 3, List.of(true, true, true, false, true)),
