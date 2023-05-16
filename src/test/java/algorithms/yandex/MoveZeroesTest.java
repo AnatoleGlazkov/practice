@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static utils.ArrayUtils.checkInt;
+import static utils.ArrayUtils.check;
 
 /**
  * The type MoveZeroes
@@ -48,7 +48,7 @@ public class MoveZeroesTest {
             nums[i] = 0;
         }
 
-        Assertions.assertTrue(checkInt(expected, nums));
+        Assertions.assertTrue(check(expected, nums));
     }
 
 }
