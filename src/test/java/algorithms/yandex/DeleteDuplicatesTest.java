@@ -14,7 +14,6 @@ import static utils.ArrayUtils.check;
 /** The type DeleteDuplicates */
 public class DeleteDuplicatesTest {
 
-
     private static Stream<Arguments> provideData() {
         return Stream.of(
             Arguments.of(new int[]{5, 2, 4, 8, 8, 8}, new int[]{2, 4, 8}),
@@ -23,7 +22,7 @@ public class DeleteDuplicatesTest {
     }
 
     @ParameterizedTest
-    @DisplayName("DeleteDuplicates")
+    @DisplayName("Удаление дубликатов")
     @MethodSource("provideData")
     void deleteDuplicates(
         int[] consecutive,
