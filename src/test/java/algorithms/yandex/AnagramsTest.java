@@ -19,7 +19,7 @@ public class AnagramsTest {
     }
 
     @ParameterizedTest
-    @DisplayName("Anagrams")
+    @DisplayName("Анаграммы")
     @MethodSource("provideData")
     void anagrams(
         String firstWord,

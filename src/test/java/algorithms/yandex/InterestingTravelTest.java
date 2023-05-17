@@ -30,7 +30,7 @@ public class InterestingTravelTest {
     }
 
     @ParameterizedTest
-    @DisplayName("Interesting Travel")
+    @DisplayName("Интересное путешествие")
     @MethodSource("provideData")
     void interestingTravel(
         final List<City> cites,

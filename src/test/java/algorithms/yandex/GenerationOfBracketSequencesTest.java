@@ -22,7 +22,7 @@ public class GenerationOfBracketSequencesTest {
     }
 
     @ParameterizedTest
-    @DisplayName("Generation of bracket sequences")
+    @DisplayName("Генерация скобочных последовательностей")
     @MethodSource("provideData")
     void GenerationOfBracketSequences(
         int number,

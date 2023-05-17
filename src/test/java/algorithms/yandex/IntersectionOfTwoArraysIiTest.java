@@ -38,13 +38,11 @@ public class IntersectionOfTwoArraysIiTest {
         int[] expected
     ) {
 
-        // Создаем хеш-таблицу для первого массива
         Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums1) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        // Ищем пересечение второго массива с хеш-таблицей
         List<Integer> list = new ArrayList<>();
         for (int num : nums2) {
             if (map.containsKey(num) && map.get(num) > 0) {
@@ -53,12 +51,10 @@ public class IntersectionOfTwoArraysIiTest {
             }
         }
 
-        // Преобразуем List в массив и возвращаем его
         int[] result = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             result[i] = list.get(i);
         }
-//        return result;
 
         assertTrue(check(expected, result));
     }

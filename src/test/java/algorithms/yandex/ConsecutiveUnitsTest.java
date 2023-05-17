@@ -26,7 +26,7 @@ public class ConsecutiveUnitsTest {
     @DisplayName("ConsecutiveUnits")
     @MethodSource("provideData")
     void consecutiveUnits(
-        int[] consecutive,
+            int[] consecutive,
         int expected
     ) {
         int resultCount = 0;
@@ -35,12 +35,12 @@ public class ConsecutiveUnitsTest {
         for (int c : consecutive) {
             if (c == 1) {
                 currentCount++;
-            } else {
                 resultCount = Math.max(currentCount, resultCount);
+            } else {
                 currentCount = 0;
             }
         }
 
-        assertEquals(expected, Math.max(currentCount, resultCount));
+        assertEquals(expected, resultCount);
     }
 }
