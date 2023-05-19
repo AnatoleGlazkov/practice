@@ -1,7 +1,5 @@
 package yandex;
 
-import lombok.SneakyThrows;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,8 +7,8 @@ import java.io.InputStreamReader;
 /** The type GemAndJewel */
 public class GemAndJewel {
 
-    @SneakyThrows
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
 
         String jewels = r.readLine();
