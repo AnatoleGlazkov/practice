@@ -13,7 +13,9 @@ public class GemAndJewelTest {
 
     private static Stream<Arguments> provideData() {
         return Stream.of(
-            Arguments.of("ab", "aabbccd", 4));
+            Arguments.of("ab", "aabbccd", 4),
+            Arguments.of("xxo", "ukzxlzxlnqoplmvwltlkvatmnnlllxrzcuqlhgomacnpeudfjpvliodepczv", 6)
+        );
     }
 
     @ParameterizedTest
@@ -31,8 +33,14 @@ public class GemAndJewelTest {
             bank[gem - 'a']++;
         }
 
+        boolean[] visited = new boolean[26];
+
         for (char jewel : jewels.toCharArray()) {
-            jewelBank += bank[jewel - 'a'];
+            int i = jewel - 'a';
+            if (!visited[i]) {
+                jewelBank += bank[i];
+                visited[i] = true;
+            }
         }
 
         Assertions.assertEquals(expected, jewelBank);

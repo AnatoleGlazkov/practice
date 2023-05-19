@@ -54,7 +54,9 @@ public class InterestingTravelTest {
             }
         }
 
-        int shortestPath = myMethod(matrix, startCity - 1, endCity - 1, new boolean[matrix.length], 0, matrix.length);
+        int shortestPath = myMethod(
+            matrix, startCity - 1, endCity - 1, new boolean[matrix.length], 0, matrix.length
+        );
 
         if (shortestPath > matrix.length) shortestPath = -1;
 
