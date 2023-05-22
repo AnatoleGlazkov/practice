@@ -1,4 +1,4 @@
-package thread;
+package thread.demo;
 
 /**
  * The type ThreadFirst

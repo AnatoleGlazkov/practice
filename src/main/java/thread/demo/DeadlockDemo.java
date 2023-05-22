@@ -1,4 +1,4 @@
-package thread;
+package thread.demo;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
