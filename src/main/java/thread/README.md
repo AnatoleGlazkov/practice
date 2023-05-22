@@ -11,8 +11,7 @@
 Два способа создать поток:
 1) Имплементировать Runnable и передать в объект Thread.
 2) Унаследовать класс Thread и переопределить метод run. <br />
-
-**Пример:** [ThreadFirst](ThreadFirst.java)
+**Пример:** [ThreadDemo](ThreadDemo.java)
 
 # **Основные методы класса Thread**
 
@@ -26,3 +25,12 @@ setName(String name) – задать имя потоку<br>
 join() – подождать завершение потока<br>
 setDaemon(boolean on) – выставить флаг – «демон»<br>
 getState() - получить состояние потока<br>
+**Пример:** [ThreadMethodDemo](ThreadMethodDemo.java)
+
+# **Dead lock**
+случается, когда
+
+поток T1 удерживает ресурс R1, и хочет получить ресурс R2<br>
+поток T2 удерживает ресурс R2, и хочет получить ресурс R1.<br>
+Потоки ждут друг друга, система не совершает прогресс.<br>
+**Пример:** [DeadlockDemo](DeadlockDemo.java)

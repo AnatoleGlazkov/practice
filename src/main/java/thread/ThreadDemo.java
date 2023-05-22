@@ -5,7 +5,7 @@ package thread;
  * <p>
  * {@link <a href="https://otus.ru/learning/145807/">...</a>}
  */
-public class ThreadFirst {
+public class ThreadDemo {
 
 
     public static void main(String... args) {
