@@ -40,6 +40,7 @@ public class DeadlockDemo {
         Resource has,
         Resource need
     ) {
+        // Доработка для избежания дедЛюка
         Resource first = has.getName().compareTo(need.getName()) > 0 ? has : need;
         Resource second = has.getName().compareTo(need.getName()) > 0 ? need : has;
 
