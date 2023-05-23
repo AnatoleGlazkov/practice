@@ -3,7 +3,6 @@ package thread.demo;
 /**
  * The type ThreadFirst
  * <p>
- * {@link <a href="https://otus.ru/learning/145807/">...</a>}
  */
 public class ThreadDemo {
 
