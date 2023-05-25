@@ -26,13 +26,6 @@ public class EqualRowAndColumnPairsTest {
             Arguments.of(new int[][]{{11, 1}, {1, 11}}, 2)
         );
     }
-//        1 3122
-//        2 2422
-//
-//        3, 1, 2, 2
-//        1, 4, 4, 5
-//        2, 4, 2, 2
-//        2, 4, 2, 2
 
     @ParameterizedTest
     @DisplayName("2352. Equal Row and Column Pairs")
