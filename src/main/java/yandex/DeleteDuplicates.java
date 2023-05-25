@@ -1,11 +1,10 @@
 package yandex;
 
-import lombok.SneakyThrows;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -16,8 +15,7 @@ public class DeleteDuplicates {
     private static final String readFileName = "src/main/resources/duplicates/input.txt";
     private static final String writeFileName = "src/main/resources/duplicates/output.txt";
 
-    @SneakyThrows
-    public static void main(String... args) {
+    public static void main(String... args) throws IOException {
 
         final List<Integer> numbers = new ArrayList<>();
 

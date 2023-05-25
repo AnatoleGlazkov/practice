@@ -1,9 +1,11 @@
 package jmm.demo;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 public class CounterJoined {
+
+    Logger log = LoggerFactory.getLogger(CounterJoined.class);
 
     private static final int LIMIT = 100_000_000;
     private int countPart1 = 0;

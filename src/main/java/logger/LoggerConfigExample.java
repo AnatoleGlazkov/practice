@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** The type LoggerConfigExample */
-//@Slf4j
 public class LoggerConfigExample {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggerConfigExample.class);

@@ -1,6 +1,5 @@
 package algorithms.yandex;
 
-import lombok.NonNull;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -60,7 +59,7 @@ public class NumberOfRecentCallsTest {
             bank = new PriorityQueue<>();
         }
 
-        public int ping(@NonNull int t) {
+        public int ping(int t) {
             bank.add(t);
             execute(t);
             return bank.size();

@@ -1,9 +1,11 @@
 package jmm.demo;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 public class CounterVolatile {
+
+    Logger log = LoggerFactory.getLogger(CounterVolatile.class);
 
     private volatile int count = 0;
     private static final int LIMIT = 100_000_000;

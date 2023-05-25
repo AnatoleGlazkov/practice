@@ -1,11 +1,10 @@
 package yandex;
 
-import lombok.SneakyThrows;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 
 /** The type Anagrams */
 public class Anagrams {
@@ -13,8 +12,7 @@ public class Anagrams {
     private static final String readFileName = "src/main/resources/anagrams/input.txt";
     private static final String writeFileName = "src/main/resources/anagrams/output.txt";
 
-    @SneakyThrows
-    public static void main(String... args) {
+    public static void main(String... args) throws IOException {
 
         int result = 1;
         String firstWord;
