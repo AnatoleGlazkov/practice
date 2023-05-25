@@ -1,5 +1,6 @@
 package algorithms.yandex;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -7,7 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /** The type ConsecutiveUnits */
 public class ConsecutiveUnitsTest {
@@ -26,7 +27,7 @@ public class ConsecutiveUnitsTest {
     @DisplayName("ConsecutiveUnits")
     @MethodSource("provideData")
     void consecutiveUnits(
-            int[] consecutive,
+        int[] consecutive,
         int expected
     ) {
         int resultCount = 0;
@@ -41,6 +42,6 @@ public class ConsecutiveUnitsTest {
             }
         }
 
-        assertEquals(expected, resultCount);
+        Assertions.assertEquals(expected, resultCount);
     }
 }
