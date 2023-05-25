@@ -1,6 +1,5 @@
 package algorithms.yandex;
 
-import lombok.val;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -46,7 +45,7 @@ public class InterestingTravelTest {
 
             for (int j = 0; j < cites.size(); j++) {
                 if (i == j) continue;
-                val city = cites.get(j);
+                City city = cites.get(j);
                 matrix[i][j] = Math.sqrt(Math.pow(currentCity.x - city.x, 2)
                     + Math.pow(currentCity.y - city.y, 2)) <= petrol
                                ? 1

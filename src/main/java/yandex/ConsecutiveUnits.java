@@ -1,11 +1,10 @@
 package yandex;
 
-import lombok.SneakyThrows;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 
 /** The type ConsecutiveUnits */
 public class ConsecutiveUnits {
@@ -13,8 +12,7 @@ public class ConsecutiveUnits {
     private static final String readFilePath = "src/main/resources/consecutive/input.txt";
     private static final String writeFilePath = "src/main/resources/consecutive/output.txt";
 
-    @SneakyThrows
-    public static void main(String... args) {
+    public static void main(String... args) throws IOException {
 
         final int[] numbers;
 

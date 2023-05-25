@@ -2,16 +2,29 @@
 
 package utils.node.item;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import utils.node.Node;
 
 /** The type TreeNode */
-@Getter
-@RequiredArgsConstructor
 public class SingleNode implements Node {
 
     private final int val;
     private final SingleNode left;
 
+    public SingleNode(
+        int val,
+        SingleNode left
+    ) {
+        this.val = val;
+        this.left = left;
+    }
+
+    @Override
+    public int getVal() {
+        return val;
+    }
+
+    @Override
+    public SingleNode getLeft() {
+        return left;
+    }
 }

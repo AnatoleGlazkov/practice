@@ -1,10 +1,12 @@
 package jmm.demo;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
+//@Slf4j
 public class CounterBroken {
 
+    Logger logger = LoggerFactory.getLogger(CounterBroken.class);
     private int count = 0;
     private static final int LIMIT = 100_000_000;
 
@@ -30,6 +32,6 @@ public class CounterBroken {
         thread1.join();
         thread2.join();
         thread3.join();
-        log.info("CounterBroken:{}", count);
+        logger.info("CounterBroken:{}", count);
     }
 }

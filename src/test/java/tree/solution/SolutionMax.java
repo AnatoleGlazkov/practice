@@ -2,7 +2,6 @@
 
 package tree.solution;
 
-import lombok.Getter;
 import tree.Solution;
 import utils.node.item.DoublyNode;
 
@@ -10,8 +9,6 @@ import utils.node.item.DoublyNode;
 public class SolutionMax implements Solution {
 
     private int answer = 0;
-
-    @Getter
     private final DoublyNode root;
 
     public SolutionMax() {
@@ -27,6 +24,11 @@ public class SolutionMax implements Solution {
                     null,
                     new DoublyNode(-2, null, null)))
         );
+    }
+
+    @Override
+    public DoublyNode getRoot() {
+        return root;
     }
 
     @Override

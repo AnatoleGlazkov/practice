@@ -1,12 +1,10 @@
 package yandex;
 
-import lombok.SneakyThrows;
-import lombok.val;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +14,7 @@ public class InterestingTravel {
     private static final String readFilePath = "src/main/resources/travel/input.txt";
     private static final String writeFilePath = "src/main/resources/travel/output.txt";
 
-    @SneakyThrows
-    public static void main(String... args) {
+    public static void main(String... args) throws IOException {
         final List<City> cites = new ArrayList<>();
         int petrol;
         int startCity;
@@ -46,7 +43,7 @@ public class InterestingTravel {
 
             for (int j = 0; j < cites.size(); j++) {
                 if (i == j) continue;
-                val city = cites.get(j);
+                City city = cites.get(j);
                 matrix[i][j] = Math.sqrt(Math.pow(currentCity.x - city.x, 2)
                     + Math.pow(currentCity.y - city.y, 2)) <= petrol
                                ? 1

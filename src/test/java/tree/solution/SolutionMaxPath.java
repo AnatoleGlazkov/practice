@@ -2,12 +2,10 @@
 
 package tree.solution;
 
-import lombok.Getter;
 import tree.Solution;
 import utils.node.item.DoublyNode;
 
 /** The type SolutionMaxPath */
-@Getter
 public class SolutionMaxPath implements Solution {
 
     private final DoublyNode root;
@@ -23,6 +21,11 @@ public class SolutionMaxPath implements Solution {
                 new DoublyNode(5, null, null),
                 new DoublyNode(4, null, null))
         );
+    }
+
+    @Override
+    public DoublyNode getRoot() {
+        return root;
     }
 
     @Override
