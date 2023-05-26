@@ -12,8 +12,6 @@ import java.util.stream.Stream;
  * The type ContainerWithMostWaterTest
  * <p>
  * {@link <a href="https://leetcode.com/problems/container-with-most-water">...</a>}
- * <p>
- * TODO return 26.06
  */
 public class ContainerWithMostWaterTest {
 
@@ -36,17 +34,19 @@ public class ContainerWithMostWaterTest {
         int right = height.length - 1;
 
         while (left < right) {
+            int l = height[left];
+            int r = height[right];
+
+            int h = Math.min(l, r);
             int w = right - left;
-            int h = Math.min(height[right], height[left]);
-            int area = w * h;
 
-            max = Math.max(max, area);
+            max = Math.max(h * w, max);
 
-            if (height[left] < height[right]) left++;
-            else if (height[left] > height[right]) right--;
+            if (l < r) left++;
+            else if (r < l) right--;
             else {
-                left++;
                 right--;
+                left++;
             }
         }
 
