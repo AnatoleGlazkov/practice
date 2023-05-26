@@ -6,7 +6,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.Iterator;
 import java.util.Stack;
 import java.util.stream.Stream;
 
@@ -33,7 +32,6 @@ public class RemovingStarsFromAStringTest {
         String s,
         String expected
     ) {
-
         Stack<Character> charStack = new Stack<>();
 
         for (char c : s.toCharArray()) {
@@ -44,7 +42,6 @@ public class RemovingStarsFromAStringTest {
             }
         }
 
-        Iterator<Character> iterator = charStack.iterator();
         StringBuilder result = new StringBuilder();
 
         while (!charStack.isEmpty()) {
