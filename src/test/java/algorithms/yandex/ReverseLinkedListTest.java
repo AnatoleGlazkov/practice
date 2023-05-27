@@ -13,10 +13,11 @@ import java.util.stream.Stream;
 import static utils.ArrayToListNode.arrayToListNode;
 import static utils.ArrayToListNode.checkToListNode;
 
-/** The type ReverseLinkedListTest
- *
- *{@link <a href="https://leetcode.com/problems/reverse-linked-list/description/">...</a>}
- * */
+/**
+ * The type ReverseLinkedListTest
+ * <p>
+ * {@link <a href="https://leetcode.com/problems/reverse-linked-list/description/">...</a>}
+ */
 
 public class ReverseLinkedListTest {
 
@@ -35,7 +36,18 @@ public class ReverseLinkedListTest {
         final ListNode head,
         final ListNode expectedNode
     ) {
-        Assertions.assertTrue(checkToListNode(expectedNode, execute(head)));
+
+        ListNode current = head;
+        ListNode result = null;
+
+        while (current != null){
+            ListNode buf = current.next;
+            current.next = result;
+            result = current;
+            current = buf;
+        }
+
+        Assertions.assertTrue(checkToListNode(expectedNode, result));
     }
 
     private ListNode execute(ListNode head) {
