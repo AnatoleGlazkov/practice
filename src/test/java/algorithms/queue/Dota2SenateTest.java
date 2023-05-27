@@ -41,7 +41,7 @@ public class Dota2SenateTest {
         Queue<Integer> dQueue = new LinkedList<>();
 
         for (int i = 0; i < n; i++) {
-            // формируем две очереди с индексами ждя каждой стороны
+            // make 2 queue senators
             if (senate.charAt(i) == 'R') rQueue.add(i);
             else dQueue.add(i);
         }
