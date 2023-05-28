@@ -7,7 +7,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -18,8 +17,7 @@ import java.util.stream.Stream;
  * The type FindTheDifferenceOfTwoArraysTest
  * <p>
  * {@link <a href="https://leetcode.com/problems/find-the-difference-of-two-arrays">...</a>}
- *
- * TODO 28.05
+ * <p>
  */
 public class FindTheDifferenceOfTwoArraysTest {
 
@@ -40,18 +38,21 @@ public class FindTheDifferenceOfTwoArraysTest {
         int[] nums2,
         List<List<Integer>> expected
     ) {
-        Assertions.assertEquals(expected, Arrays.asList(getFilteredSet(nums1, nums2), getFilteredSet(nums2, nums1)));
+        List<Integer> numsList1 = method(nums1, nums2);
+        List<Integer> numsList2 = method(nums2, nums1);
+
+        Assertions.assertEquals(expected, new ArrayList<>(List.of(numsList1, numsList2)));
     }
 
-    private List<Integer> getFilteredSet(
-        final int[] master,
-        final int[] slave
+    private List<Integer> method(
+        int[] master,
+        int[] slave
     ) {
+        Set<Integer> bank = new HashSet<>();
         Set<Integer> masterSet = new HashSet<>();
-        Set<Integer> slaveSet = new HashSet<>();
 
-        for (int n : slave) slaveSet.add(n);
-        for (int n : master) if (!slaveSet.contains(n)) masterSet.add(n);
+        for (int n : slave) bank.add(n);
+        for (int n : master) if (!bank.contains(n)) masterSet.add(n);
 
         return new ArrayList<>(masterSet);
     }

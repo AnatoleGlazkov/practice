@@ -14,9 +14,6 @@ import java.util.stream.Stream;
  * The type MaxNumberOfKSumPairsTest
  * <p>
  * {@link  <a href="https://leetcode.com/problems/max-number-of-k-sum-pairs">...</a>}
- *
- * TODO 27.05
- *
  */
 public class MaxNumberOfKSumPairsTest {
 
@@ -38,18 +35,16 @@ public class MaxNumberOfKSumPairsTest {
         int k,
         int expected
     ) {
-
-        Map<Integer,Integer> map=new HashMap<>();
+        Map<Integer, Integer> bank = new HashMap<>();
         int count = 0;
 
-        for (int num : nums) {
-            int sub = k - num;
-
-            if (map.containsKey(sub) && map.get(sub) > 0) {
+        for (int n : nums) {
+            int sub = k - n;
+            if (bank.containsKey(sub) && bank.get(sub) > 0) {
                 count++;
-                map.put(sub, map.get(sub) - 1);
+                bank.put(sub, bank.get(sub) - 1);
             } else {
-                map.put(num, map.getOrDefault(num, 0) + 1);
+                bank.put(n, bank.getOrDefault(sub, 0) + 1);
             }
         }
 
