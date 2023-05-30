@@ -1,4 +1,4 @@
-package algorithms.yandex;
+package algorithms.linked_list;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -33,18 +33,17 @@ public class ReverseLinkedListTest {
     @DisplayName("206. Reverse Linked List")
     @MethodSource("provideData")
     void reverseLinkedList(
-        final ListNode head,
-        final ListNode expectedNode
+        ListNode head,
+        ListNode expectedNode
     ) {
 
-        ListNode current = head;
         ListNode result = null;
 
-        while (current != null){
-            ListNode buf = current.next;
-            current.next = result;
-            result = current;
-            current = buf;
+        while (head != null) {
+            ListNode tmp = head.next;
+            head.next = result;
+            result = head;
+            head = tmp;
         }
 
         Assertions.assertTrue(checkToListNode(expectedNode, result));
