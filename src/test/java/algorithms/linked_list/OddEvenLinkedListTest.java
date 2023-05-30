@@ -17,8 +17,6 @@ import static utils.ArrayToListNode.checkToListNode;
  * The type OddEvenLinkedListTest
  * <p>
  * {@link  <a href="https://leetcode.com/problems/odd-even-linked-list">...</a>}
- * <p>
- * TODO 01.06
  */
 public class OddEvenLinkedListTest {
 
@@ -45,7 +43,7 @@ public class OddEvenLinkedListTest {
 
         ListNode odd = head;
         ListNode even = head.next;
-        ListNode headEven = even;
+        ListNode evenHead = even;
 
         while (even != null && even.next != null) {
             odd.next = even.next;
@@ -55,7 +53,7 @@ public class OddEvenLinkedListTest {
             even = even.next;
         }
 
-        odd.next = headEven;
+        odd.next = evenHead;
 
         Assertions.assertTrue(checkToListNode(expected, head));
     }

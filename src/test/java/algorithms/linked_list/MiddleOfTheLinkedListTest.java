@@ -37,21 +37,15 @@ public class MiddleOfTheLinkedListTest {
         final ListNode head,
         final ListNode expectedNode
     ) {
-        assertTrue(checkToListNode(expectedNode, execute(head)));
-    }
-
-    private ListNode execute(
-        ListNode head
-    ) {
-        ListNode slow = head;
         ListNode fast = head;
+        ListNode slow = head;
 
-        while (fast != null && fast.next != null){
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
-        return slow;
-    }
 
+        assertTrue(checkToListNode(expectedNode, slow));
+    }
 }
 
