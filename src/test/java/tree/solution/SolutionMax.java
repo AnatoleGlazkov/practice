@@ -3,31 +3,31 @@
 package tree.solution;
 
 import tree.Solution;
-import utils.node.item.DoublyNode;
+import utils.node.item.TreeNode;
 
 /** The type SolutionMax */
 public class SolutionMax implements Solution {
 
     private int answer = 0;
-    private final DoublyNode root;
+    private final TreeNode root;
 
     public SolutionMax() {
-        root = new DoublyNode(
+        root = new TreeNode(
             -10,
-            new DoublyNode(9, null, null),
-            new DoublyNode(20,
-                new DoublyNode(-3,
-                    new DoublyNode(5,
-                        new DoublyNode(-2, null, null), null),
-                    new DoublyNode(-4, null, null)),
-                new DoublyNode(8,
+            new TreeNode(9, null, null),
+            new TreeNode(20,
+                new TreeNode(-3,
+                    new TreeNode(5,
+                        new TreeNode(-2, null, null), null),
+                    new TreeNode(-4, null, null)),
+                new TreeNode(8,
                     null,
-                    new DoublyNode(-2, null, null)))
+                    new TreeNode(-2, null, null)))
         );
     }
 
     @Override
-    public DoublyNode getRoot() {
+    public TreeNode getRoot() {
         return root;
     }
 
@@ -37,13 +37,13 @@ public class SolutionMax implements Solution {
         return answer;
     }
 
-    private int execute(DoublyNode node) {
+    private int execute(TreeNode node) {
         if (node == null) return 0;
 
-        int maxLeftPath = Math.max(execute(node.getLeft()), 0);
-        int maxRightPath = Math.max(execute(node.getRight()), 0);
+        int maxLeftPath = Math.max(execute(node.left), 0);
+        int maxRightPath = Math.max(execute(node.right), 0);
 
-        this.answer = Math.max(this.answer, maxRightPath + maxLeftPath + node.getVal());
-        return Math.max(maxLeftPath, maxRightPath) + node.getVal();
+        this.answer = Math.max(this.answer, maxRightPath + maxLeftPath + node.val());
+        return Math.max(maxLeftPath, maxRightPath) + node.val();
     }
 }

@@ -2,12 +2,12 @@
 
 package tree;
 
-import utils.node.item.DoublyNode;
+import utils.node.item.TreeNode;
 
 /** The type Solution */
 public interface Solution {
 
-    DoublyNode getRoot();
+    TreeNode getRoot();
 
     int maxPathSum();
 }
