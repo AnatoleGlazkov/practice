@@ -16,9 +16,16 @@ import static utils.BTreePrinter.printNode;
 /** The type BinaryTreeVisualizerTest */
 public class BinaryTreeVisualizerTest {
 
+    private static Stream<Arguments> source() {
+        return Stream.of(
+            Arguments.of(Named.of("SolutionMax", new SolutionMax()), 30),
+            Arguments.of(Named.of("SolutionMaxPath", new SolutionMaxPath()), 13)
+        );
+    }
+
     @ParameterizedTest
     @DisplayName("Максимальный путь дереве")
-    @MethodSource("provideSolutionsAndIntAnswer")
+    @MethodSource("source")
     public void maxPathTest(
         final Solution solution,
         final int result
@@ -28,12 +35,5 @@ public class BinaryTreeVisualizerTest {
         System.out.println("result: " + maxPath + "\n");
 
         assertEquals(result, maxPath);
-    }
-
-    private static Stream<Arguments> provideSolutionsAndIntAnswer() {
-        return Stream.of(
-            Arguments.of(Named.of("SolutionMax", new SolutionMax()), 30),
-            Arguments.of(Named.of("SolutionMaxPath", new SolutionMaxPath()), 13)
-        );
     }
 }

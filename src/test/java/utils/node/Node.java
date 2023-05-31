@@ -5,7 +5,7 @@ package utils.node;
 /** The type Node */
 public interface Node {
 
-    int getVal();
+    int val();
 
-    Node getLeft();
+    Node left();
 }

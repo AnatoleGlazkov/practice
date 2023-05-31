@@ -3,7 +3,7 @@
 package utils;
 
 import utils.node.Node;
-import utils.node.item.DoublyNode;
+import utils.node.item.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,7 +26,7 @@ public class BTreePrinter {
             return;
 
         int floor = maxLevel - level;
-        int endgeLines = (int) Math.pow(2, (Math.max(floor - 1, 0)));
+        int endLines = (int) Math.pow(2, (Math.max(floor - 1, 0)));
         int firstSpaces = (int) Math.pow(2, (floor)) - 1;
         int betweenSpaces = (int) Math.pow(2, (floor + 1)) - 1;
 
@@ -35,11 +35,11 @@ public class BTreePrinter {
         List<Node> newNodes = new ArrayList<>();
         for (Node node : nodes) {
             if (node != null) {
-                System.out.print(node.getVal());
-                newNodes.add(node.getLeft());
+                System.out.print(node.val());
+                newNodes.add(node.left());
 
-                if (node instanceof DoublyNode) {
-                    newNodes.add(((DoublyNode) node).getRight());
+                if (node instanceof TreeNode) {
+                    newNodes.add(((TreeNode) node).right);
                 }
 
             } else {
@@ -52,27 +52,27 @@ public class BTreePrinter {
         }
         System.out.println();
 
-        for (int i = 1; i <= endgeLines; i++) {
+        for (int i = 1; i <= endLines; i++) {
             for (Node node : nodes) {
                 printWhitespaces(firstSpaces - i);
                 if (node == null) {
-                    printWhitespaces(endgeLines + endgeLines + i + 1);
+                    printWhitespaces(endLines + endLines + i + 1);
                     continue;
                 }
 
-                if (node.getLeft() != null)
+                if (node.left() != null)
                     System.out.print("/");
                 else
                     printWhitespaces(1);
 
                 printWhitespaces(i + i - 1);
 
-                if (node instanceof DoublyNode && ((DoublyNode) node).getRight() != null)
+                if (node instanceof TreeNode && ((TreeNode) node).right != null)
                     System.out.print("\\");
                 else
                     printWhitespaces(1);
 
-                printWhitespaces(endgeLines + endgeLines - i);
+                printWhitespaces(endLines + endLines - i);
             }
 
             System.out.println();
@@ -90,10 +90,10 @@ public class BTreePrinter {
         if (node == null)
             return 0;
 
-        if (node instanceof DoublyNode) {
-            return Math.max(maxLevel(node.getLeft()), maxLevel(((DoublyNode) node).getRight())) + 1;
+        if (node instanceof TreeNode) {
+            return Math.max(maxLevel(node.left()), maxLevel(((TreeNode) node).right)) + 1;
         } else {
-            return maxLevel(node.getLeft()) + 1;
+            return maxLevel(node.left()) + 1;
         }
 
     }
