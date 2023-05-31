@@ -16,7 +16,9 @@ public class BubbleSortTest {
 
     public static Stream<Arguments> source() {
         return Stream.of(
-            Arguments.of(new int[]{1, 2, 4, 6, 2, 3}, new int[]{1, 2, 2, 3, 4, 6})
+            Arguments.of(new int[]{1, 2, 4, 6, 2, 3}, new int[]{1, 2, 2, 3, 4, 6}),
+            Arguments.of(new int[]{6, 1, 2, 4, 5, 2, 3}, new int[]{1, 2, 2, 3, 4, 5, 6}),
+            Arguments.of(new int[]{6, 1, 1, 4, 5, 1, 1}, new int[]{1, 1, 1, 1, 4, 5, 6})
         );
     }
 
@@ -30,13 +32,10 @@ public class BubbleSortTest {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j < array.length; j++) {
-
-                int prev = array[j - 1];
                 int current = array[j];
-
-                if (current < prev) {
+                if (current < array[j - 1]) {
+                    array[j] = array[j - 1];
                     array[j - 1] = current;
-                    array[j] = prev;
                 }
             }
         }
