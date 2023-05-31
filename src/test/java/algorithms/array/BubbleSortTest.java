@@ -13,7 +13,6 @@ import static utils.ArrayUtils.check;
 /** The type BubbleSortTest */
 public class BubbleSortTest {
 
-
     public static Stream<Arguments> source() {
         return Stream.of(
             Arguments.of(new int[]{1, 2, 4, 6, 2, 3}, new int[]{1, 2, 2, 3, 4, 6}),
